@@ -5,11 +5,12 @@ const taskSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  sprint: {
+  sprintId: {
     type: mongoose.Types.ObjectId,
     ref:'sprints',
     required: true
   },
+  isCompleted:{type:Boolean,default:false},
   day: Number,
   month: Number,
   date: Number

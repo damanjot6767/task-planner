@@ -6,6 +6,9 @@ const sprintSchema = new mongoose.Schema({
     required: true,
     unique:true
   },
+  tasks:[
+    {type: mongoose.Types.ObjectId,ref:'tasks'}
+  ],
   day: Number,
   month: Number,
   date: Number
