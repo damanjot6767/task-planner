@@ -66,11 +66,11 @@ const Sprint = () => {
          
         )}
         <Box style={{display:"flex",justifyContent:"space-between"}}>
-          <Button disabled={page===1} onClick={()=>setPage(page-1)}>Prev</Button>
+          <Button disabled={page==1?true:false} onClick={()=>setPage(page-1)}>Prev</Button>
           <Heading as='h3' size='xl' noOfLines={1}>
           {page}
         </Heading>
-          <Button disabled={page===sprint.length} onClick={()=>setPage(page+1)}>Next</Button>
+          <Button disabled={page==sprint.lengtht?true:false} onClick={()=>setPage(page+1)}>Next</Button>
         </Box>
     </Stack>
 }
