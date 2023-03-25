@@ -24,7 +24,7 @@ TaskRouter.post('/add', async (req, res) => {
   }
 });
 
-//change status
+//change statuss
 TaskRouter.put('/status/:id', async (req, res) => {
     let {id}=req.params
   try {
