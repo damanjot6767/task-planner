@@ -6,13 +6,10 @@ import AssignSprint from './assignSprint';
 const Sprint = (props) => {
     const[sprint,setSprint]=useState([]);
     const[page,setPage]=useState(1);
-    const[detail,setDetail]=useState("");
     const[task,setTask]=useState("");
-    const[completed,setCompleted]=useState(0)
-    const[pending,setPending]=useState(0)
     const fetchSprint=async (page)=>{
       try {
-        const {data} = await axios.post('http://localhost:8000/sprint/get',{page});
+        const {data} = await axios.post('https://task-planner-flph.onrender.com/sprint/get',{page});
          setSprint(data.message)
          props.fetchAllTasks()
       } catch (error) {
@@ -21,7 +18,7 @@ const Sprint = (props) => {
     }
     const addTask=async (id)=>{
       try {
-        const {data} = await axios.post('http://localhost:8000/task/add',{id,name:task});
+        const {data} = await axios.post('https://task-planner-flph.onrender.com/task/add',{id,name:task});
          alert(data.message)
          fetchSprint(page)
          props.fetchAllTasks()

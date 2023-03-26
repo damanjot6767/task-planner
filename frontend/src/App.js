@@ -1,9 +1,7 @@
 
-import { useStatStyles } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
-import AssignSprint from './component/assignSprint';
 import CreateSprint from './component/createsprint';
 import Sprint from './component/sprint';
 
@@ -13,7 +11,7 @@ function App() {
   const[pending,setPending]=useState(0);
   const fetchAllTasks=async ()=>{
     try {
-      const {data} = await axios.get('http://localhost:8000/task/alltasks');
+      const {data} = await axios.get('https://task-planner-flph.onrender.com/task/alltasks');
        setTasks(data.result);
     } catch (error) {
       alert(error.message)

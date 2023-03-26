@@ -12,7 +12,7 @@ const AssignSprint = (props) => {
     
      const fetchUser=async (page)=>{
         try {
-          const {data} = await axios.post('http://localhost:8000/task/All',{page});
+          const {data} = await axios.post('https://task-planner-flph.onrender.com/task/All',{page});
            setUsers(data.result);
            setUserTask(data.result1)
         } catch (error) {
@@ -21,7 +21,7 @@ const AssignSprint = (props) => {
       }
       const fetchAllTasks=async ()=>{
         try {
-          const {data} = await axios.get('http://localhost:8000/task/alltasks');
+          const {data} = await axios.get('https://task-planner-flph.onrender.com/task/alltasks');
            setTasks(data.result);
         } catch (error) {
           alert(error.message)
@@ -29,7 +29,7 @@ const AssignSprint = (props) => {
       }
       const fetchAllUsers=async ()=>{
         try {
-          const {data} = await axios.get('http://localhost:8000/task/alluser');
+          const {data} = await axios.get('https://task-planner-flph.onrender.com/task/alluser');
            setAllUsers(data.result);
         } catch (error) {
           alert(error.message)
@@ -37,7 +37,7 @@ const AssignSprint = (props) => {
       }
       const AssignTask=async (id,userId)=>{
         try {
-          const {data} = await axios.post(`http://localhost:8000/task/assign/${assign.id}`,{userId:assign.userId});
+          const {data} = await axios.post(`https://task-planner-flph.onrender.com/task/assign/${assign.id}`,{userId:assign.userId});
            alert(data.message)
            fetchUser(page)
         } catch (error) {
@@ -46,7 +46,7 @@ const AssignSprint = (props) => {
       }
       const CompleteTask=async (id)=>{
         try {
-          const {data} = await axios.put(`http://localhost:8000/task/status/${id}`);
+          const {data} = await axios.put(`https://task-planner-flph.onrender.com/task/status/${id}`);
            alert(data.message)
            fetchUser(page)
            props.fetchSprint(props.page)

@@ -11,7 +11,7 @@ const CreateSprint = () => {
        
         else{
             try {
-                const response = await axios.post('http://localhost:8000/sprint/add', {
+                const response = await axios.post('https://task-planner-flph.onrender.com/sprint/add', {
                   name:sprint
                 });
                  alert(response.data.message)
