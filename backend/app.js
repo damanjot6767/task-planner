@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //routes
 app.use("/sprint",SprintRouter)
-app.use("task",TaskRouter)
+app.use("/task",TaskRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
