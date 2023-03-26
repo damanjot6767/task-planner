@@ -22,8 +22,8 @@ const CreateSprint = () => {
         
     }
   return (
-    <Stack w="md" m="auto" spacing={4}>
-        <Heading as='h3' size='xl' noOfLines={1}>
+    <Stack w="md" m="auto" spacing={4} border={"2px solid #00FFFF"} borderRadius={"10px"} p="20px">
+        <Heading as='h3' size='xl' noOfLines={1} textAlign={"center"}>
          Select Sprint
         </Heading>
          <Box style={{display:"flex",justifyContent:"space-between"}}>
